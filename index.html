@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcom to Space</title>
+    <link rel="stylesheet" href="style_login.css">
+</head>
+<body>
+    <header>
+        <h2>Ready To Explore Solary System !!</h2>
+    </header>
+    <div class="login-wrap">
+        <div class="login-html"> 
+            <h3>Register Your Trip here</h3>   
+          <div class="login-form" >
+              <div class="group">
+              <br><br>
+              </div>
+              <div class="group">
+                <!-- <label for="name" class="label">Name</label> -->
+                <input type="text" class="input" required id="user" placeholder="Your Name" autocapitalize="true" autocomplete="off">
+              </div>
+              <div class="group">
+                <!-- <label for="email" class="label">Email</label> -->
+                <input type="mail" class="input" required id="mail" placeholder="Your Gmail" autocomplete="off">
+              </div>
+              <div class="group">
+              <button onclick="validate()" class="button">Sign Up Now!</button> 
+              </div>
+          </div>
+        </div>
+       </div>
+       <div class="auth">
+           <p>
+            <ul>
+                <li id="auth1">Madhumitha G </li>
+                <li>|</li>
+                <li id="auth2">Ram Vignesh Kumar K</li>
+           </ul>
+           </p>
+       </div>
+       <script>
+          function validate()
+          {    
+              var re = /^[A-Za-z]+$/;
+              var username = document.getElementById("user");
+              var mail = document.getElementById("mail");
+              if(re.test(username.value))
+              {
+                  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value))
+                  {
+                      alert('Welcome '+username.value);
+                      redirect(username,mail);
+                  }
+                  else
+                  {
+                      alert("Invalid email address!")                    
+                  }               
+              }                
+              else
+              {
+                  alert('Invalid Name.\nOnly letters\nNo space'); 
+              }                     
+          }
+          function redirect() 
+          {
+              location.replace('https://vickypotter.github.io/solar_system/');
+          }
+      </script>
+</body>
+</html>
